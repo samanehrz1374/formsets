@@ -18,17 +18,17 @@ class BookModelForm(forms.ModelForm):
 
     class Meta:
         model = Book
-        fields = ('name', )
-        labels = {
-            'name': 'Book Name'
-        }
-        widgets = {
-            'name': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Enter Book Name here'
-                }
-            )
-        }
+        fields = ()
+        # labels = {
+        #     'name': 'Book Name'
+        # }
+        # widgets = {
+        #     'name': forms.TextInput(attrs={
+        #         'class': 'form-control',
+        #         'placeholder': 'Enter Book Name here'
+        #         }
+        #     )
+        # }
 
 
 # BookFormset = formset_factory(BookForm)

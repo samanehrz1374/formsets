@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+   
     <form class="form-horizontal" method="POST" action="">
         {% csrf_token %}
-    <div class="row spacer">
+    <!-- <div class="row spacer">
     <div class="col-2">
         <label>{{bookform.name.label}}</label>
     </div>
@@ -18,7 +19,7 @@
             {{bookform.name}}
         </div>
     </div>
-    </div>
+    </div> -->
     {{ formset.management_form }}
     {% for form in formset %}
     <div class="row form-row spacer">
