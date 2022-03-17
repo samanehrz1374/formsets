@@ -1,7 +1,7 @@
 from django import forms
-from django.forms import (formset_factory, modelformset_factory)
+from django.forms import (formset_factory, modelformset_factory,inlineformset_factory)
 
-from .models import (Book, Author)
+from .models import (Book, Author,ProfileModel,skillsModel)
 
 
 # class BookForm(forms.Form):
@@ -55,3 +55,5 @@ AuthorFormset = modelformset_factory(
         })
     }
 )
+
+LanguageFormset = inlineformset_factory(ProfileModel, skillsModel, fields=('skillname',),extra=0,)
