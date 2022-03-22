@@ -56,4 +56,16 @@ AuthorFormset = modelformset_factory(
     }
 )
 
-LanguageFormset = inlineformset_factory(ProfileModel, skillsModel, fields=('skillname',),extra=0,)
+LanguageFormset = inlineformset_factory(ProfileModel, skillsModel,
+ fields=('skillname','levelofskill'),
+ extra=0,
+ error_messages={
+    'skillname': {
+        'required': 'some custom required message',
+    },
+    'levelofskill': {
+        'required': 'some required message',
+    },
+ }
+ 
+ )

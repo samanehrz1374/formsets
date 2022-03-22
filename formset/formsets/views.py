@@ -2,6 +2,7 @@
 
 # Create your views here.
 from django.shortcuts import render, redirect
+
 from django.views import generic
 
 from .forms import (
@@ -51,9 +52,14 @@ def index(request, programmer_id):
     if request.method == 'POST':
         if 'skilledit' in request.POST:
             formset = LanguageFormset(request.POST, instance=programmer)
+            
             if formset.is_valid():
                 formset.save()
                 return redirect('index', programmer_id=programmer.id)
+            else:
+                 
+                form_errors = formset.errors
+                return render(request, 'formsets/index.html', {'formset': formset, 'form_errors': form_errors},)
 
     formset = LanguageFormset(instance=programmer)
 
